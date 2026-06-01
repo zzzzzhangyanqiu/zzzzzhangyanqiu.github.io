@@ -1,4 +1,6 @@
 baseURL = "https://zzzzzhangyanqiu.github.io/"
+# 注：本仓库已重命名为 zzzzzhangyanqiu.github.io，站点根域名即上方地址
+# 部署由 GitHub Actions 完成，构建时会用 Pages 实际地址覆盖此值
 languageCode = "zh-cn"
 title = "张艳秋的技术博客"
 theme = "PaperMod"
