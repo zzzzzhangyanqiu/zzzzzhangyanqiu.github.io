@@ -1,0 +1,99 @@
+baseURL = "https://zzzzzhangyanqiu.github.io/"
+languageCode = "zh-cn"
+title = "张艳秋的技术博客"
+theme = "PaperMod"
+
+# 分页
+paginate = 10
+
+# 中文不靠空格分词，需要这个才能正确统计字数/摘要
+hasCJKLanguage = true
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+# 代码高亮
+pygmentsUseClasses = true
+
+# 允许文章内联 HTML（如 <font>、带样式的 <img>）正常渲染
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+# ---------- 菜单 ----------
+[menu]
+  [[menu.main]]
+    identifier = "archives"
+    name = "归档"
+    url = "/archives/"
+    weight = 10
+  [[menu.main]]
+    identifier = "categories"
+    name = "分类"
+    url = "/categories/"
+    weight = 20
+  [[menu.main]]
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
+    weight = 30
+  [[menu.main]]
+    identifier = "search"
+    name = "搜索"
+    url = "/search/"
+    weight = 40
+
+# ---------- 主题参数 ----------
+[params]
+  env = "production"
+  description = "张艳秋的技术博客 —— Java、Spring、MyBatis、消息队列、设计模式与读书笔记"
+  author = "张艳秋"
+  defaultTheme = "auto"        # auto / light / dark
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true   # 代码块右上角复制按钮
+  ShowWordCount = true
+  ShowToc = true               # 文章目录
+  TocOpen = false
+  ShowRssButtonInSectionTermList = true
+  disableScrollToTop = false
+
+  # 首页顶部介绍区（home-info 模式）
+  [params.homeInfoParams]
+    Title = "你好，我是张艳秋 👋"
+    Content = "9 年 Java 研发，深耕搜索、数据治理与高并发系统。这里记录我的源码阅读、技术沉淀与读书笔记。"
+
+  # 社交图标（按需修改/删除）
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/zzzzzhangyanqiu"
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:zzzzzhangyanqiu@gmail.com"
+
+  # 站内搜索（配合 outputs 的 JSON）
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+# 搜索需要输出 JSON 索引
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
