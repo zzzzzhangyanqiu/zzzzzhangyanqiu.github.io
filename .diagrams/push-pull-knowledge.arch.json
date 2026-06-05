@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "title": "两种知识分处数据流两端",
+  "type": "flow-diagram",
+  "source": "generated",
+  "profile": "default",
+  "theme": "tech-blue",
+  "layout": "horizontal",
+  "counts": {
+    "nodes": 6,
+    "edges": 2,
+    "modules": 0
+  },
+  "nodes": [
+    {
+      "id": "pushLabel",
+      "label": "push\n上游主动",
+      "type": "process",
+      "size": "small"
+    },
+    {
+      "id": "up1",
+      "label": "上游 · 生产者\n新鲜度知识：有没有新数据",
+      "type": "service",
+      "size": "xl"
+    },
+    {
+      "id": "down1",
+      "label": "下游 · 消费者\n能力知识：能不能接住",
+      "type": "service",
+      "size": "xl"
+    },
+    {
+      "id": "pullLabel",
+      "label": "pull\n下游主动",
+      "type": "process",
+      "size": "small"
+    },
+    {
+      "id": "up2",
+      "label": "上游 · 生产者\n新鲜度知识：有没有新数据",
+      "type": "service",
+      "size": "xl"
+    },
+    {
+      "id": "down2",
+      "label": "下游 · 消费者\n能力知识：能不能接住",
+      "type": "service",
+      "size": "xl"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-1",
+      "from": "up1",
+      "to": "down1",
+      "type": "primary",
+      "label": "一有新数据就发\n低延迟 · 须自己流控"
+    },
+    {
+      "id": "edge-2",
+      "from": "down2",
+      "to": "up2",
+      "type": "primary",
+      "label": "有空了才来要\n天然背压 · 须轮询/通知"
+    }
+  ],
+  "modules": []
+}

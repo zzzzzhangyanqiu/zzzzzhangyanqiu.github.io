@@ -1,0 +1,117 @@
+meta:
+  profile: default
+  theme: tech-blue
+  source: generated
+  layout: horizontal
+  canvas: auto
+  routing: orthogonal
+  title: 两种知识分处数据流两端
+nodes:
+  - id: pushLabel
+    label: |-
+      push
+      上游主动
+    type: process
+    size: small
+    position:
+      x: 40
+      'y': 80
+    style:
+      fillColor: none
+      strokeColor: none
+      fontColor: '#EA580C'
+      fontSize: 16
+      fontWeight: 700
+  - id: up1
+    label: |-
+      上游 · 生产者
+      新鲜度知识：有没有新数据
+    type: service
+    size: xl
+    position:
+      x: 240
+      'y': 60
+    style:
+      fillColor: '#DBEAFE'
+      strokeColor: '#2563EB'
+      fontColor: '#1E3A8A'
+      fontSize: 13
+  - id: down1
+    label: |-
+      下游 · 消费者
+      能力知识：能不能接住
+    type: service
+    size: xl
+    position:
+      x: 700
+      'y': 60
+    style:
+      fillColor: '#DCFCE7'
+      strokeColor: '#16A34A'
+      fontColor: '#14532D'
+      fontSize: 13
+  - id: pullLabel
+    label: |-
+      pull
+      下游主动
+    type: process
+    size: small
+    position:
+      x: 40
+      'y': 320
+    style:
+      fillColor: none
+      strokeColor: none
+      fontColor: '#0891B2'
+      fontSize: 16
+      fontWeight: 700
+  - id: up2
+    label: |-
+      上游 · 生产者
+      新鲜度知识：有没有新数据
+    type: service
+    size: xl
+    position:
+      x: 240
+      'y': 300
+    style:
+      fillColor: '#DBEAFE'
+      strokeColor: '#2563EB'
+      fontColor: '#1E3A8A'
+      fontSize: 13
+  - id: down2
+    label: |-
+      下游 · 消费者
+      能力知识：能不能接住
+    type: service
+    size: xl
+    position:
+      x: 700
+      'y': 300
+    style:
+      fillColor: '#DCFCE7'
+      strokeColor: '#16A34A'
+      fontColor: '#14532D'
+      fontSize: 13
+edges:
+  - from: up1
+    to: down1
+    type: primary
+    label: |-
+      一有新数据就发
+      低延迟 · 须自己流控
+    style:
+      strokeColor: '#EA580C'
+      strokeWidth: 2
+      fontColor: '#9A3412'
+  - from: down2
+    to: up2
+    type: primary
+    label: |-
+      有空了才来要
+      天然背压 · 须轮询/通知
+    style:
+      strokeColor: '#0891B2'
+      strokeWidth: 2
+      fontColor: '#155E75'
+modules: []
