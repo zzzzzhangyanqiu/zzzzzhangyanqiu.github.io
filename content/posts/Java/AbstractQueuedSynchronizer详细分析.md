@@ -92,7 +92,7 @@ static final class Node {
 
 举个例子，当前对象内已经有一个线程持有锁了，其它三个线程在等待获取锁，并且其中一个线程已经中断了（可能是因为超时或者调用了`interrupt()`方法），那么当前状态如下图
 
-![image-20201214113403978](/images/oss/picgo/image-20201214113403978.png)
+![image-20201214113403978](/images/oss/PicGo/image-20201214113403978.png)
 
 看到上面的图，我们就可以先推测一下加锁或者解锁的大概流程。下面是我的猜想
 
@@ -492,7 +492,7 @@ private final boolean parkAndCheckInterrupt() {
 
 这几个方法可能比较零散，我们用一张图整体梳理
 
-![AQS加锁流程1](/images/oss/picgo/AQS%E5%8A%A0%E9%94%81%E6%B5%81%E7%A8%8B1.png)
+![AQS加锁流程1](/images/oss/PicGo/AQS%E5%8A%A0%E9%94%81%E6%B5%81%E7%A8%8B1.png)
 
 图中看到，如果线程没有获取到锁，会阻塞住，等待其它线程唤醒，那么这个唤醒操作在哪里呢？接下来我们一起来看`AQS`的解锁操作
 

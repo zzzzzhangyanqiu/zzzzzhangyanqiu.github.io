@@ -55,7 +55,7 @@ categories:
 
 `SAX`采用的是**推模式**，所谓的推模式就是由`SAX`来控制整个解析的流程，通过注册的事件推送给应用程序，应用程序无法控制整个解析流程，如下图
 
-![image-20201229195617733](/images/oss/picgo/image-20201229195617733.png)
+![image-20201229195617733](/images/oss/PicGo/image-20201229195617733.png)
 
 `SAX`的缺点也很明显，由于不加载整个`XML`文档，所以需要靠开发人员自己维护多级节点之间的关系，因为是流式处理（只能向后），所以`SAX`方式不能像`DOM`方式那样导航到之前节点。不支持`XPath`，不能提供写入`XML`文档的功能。
 
@@ -63,7 +63,7 @@ categories:
 
 `StAX `解析方式与`SAX `解析方式类似，它也是把`XML`文档作为一个事件流进行处理，但不同之处在于`StAX`采用的是**拉模式** 。所谓拉模式是应用程序通过调用解析器推进解析的进程，整个解析过程都是由应用程序来控制的。
 
-![image-20201229195716521](/images/oss/picgo/image-20201229195716521.png)
+![image-20201229195716521](/images/oss/PicGo/image-20201229195716521.png)
 
 ### XPath简介 ###
 
@@ -371,7 +371,7 @@ private void commonConstructor(boolean validation, Properties variables, EntityR
 
 可以看到第一句与其它的`eval`方法无异，都是调用`XPath`的接口，第二句则调用了`PropertyParser`的`parse()`方法来解析数据并返回`String`类型的变量。此类会检测是否开启默认值的功能以及修改默认分隔符，默认值以及默认分隔符功能官网说明如下
 
-![image-20201231115344812](/images/oss/picgo/image-20201231115344812.png)
+![image-20201231115344812](/images/oss/PicGo/image-20201231115344812.png)
 
 `PropertyParser.parse()`方法实现如下
 

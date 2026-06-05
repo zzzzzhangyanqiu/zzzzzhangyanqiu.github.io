@@ -23,7 +23,7 @@ categories:
 
 其中每个模块的主要功能如下图
 
-![MyBatis](/images/oss/picgo/MyBatis.png)
+![MyBatis](/images/oss/PicGo/MyBatis.png)
 
 在后面的文章中，我们来从下至上的依次了解每个模块的作用及其原理，一点点的揭开`MyBatis`的神秘面纱
 

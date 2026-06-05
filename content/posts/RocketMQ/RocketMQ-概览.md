@@ -49,7 +49,7 @@ categories:
 4. **Consumer**：消息消费者
 5. **Message**：发送的消息
 
-<img src="/images/oss/picGo/image-20240307181722780.png" alt="image-20240307181722780" style="zoom:50%;" />
+<img src="/images/oss/PicGo/image-20240307181722780.png" alt="image-20240307181722780" style="zoom:50%;" />
 
 ## 其它组件
 
@@ -63,13 +63,13 @@ categories:
 
 再次完善上面这幅图
 
-![image-20240308104706845](/images/oss/picGo/image-20240308104706845.png)
+![image-20240308104706845](/images/oss/PicGo/image-20240308104706845.png)
 
 ## 流程
 
 了解整体架构后，来看一条消息从生产到消费完成的整个流程
 
-<img src="/images/oss/picGo/image-20240308141341915.png" alt="image-20240308141341915"  />
+<img src="/images/oss/PicGo/image-20240308141341915.png" alt="image-20240308141341915"  />
 
 ## 通信协议
 
