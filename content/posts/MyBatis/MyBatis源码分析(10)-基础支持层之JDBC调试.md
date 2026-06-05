@@ -23,7 +23,7 @@ categories:
 
 `BaseJdbcLogger`是一个抽象类，它是`JDBC`包下所有`logger`类的父类，类关系图如下
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/BaseJdbcLogger%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/BaseJdbcLogger%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE.png)
 
 看到`InvocationHandler`接口，可能有的同学立刻就会想到`JDK`的动态代理，别着急，我们一步步的来分析。
 

@@ -11,7 +11,7 @@ categories:
 
 我们在使用`MyBatis`的时候，通常都是定义一个接口，然后使用`xml`或者注解的方式来编辑`SQL`语句，查询数据库时直接调用此接口就可以了。注意，此时的接口没有实现类，那么`MyBatis`是通过什么方式来实现接口和`xml`文件绑定的呢？今天我们就一起来了解`MyBatis`的`binding`模块。了解此模块之前，首先来看一下此模块的整体结构图
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/binding%E6%A8%A1%E5%9D%97%E7%B1%BB%E7%BB%93%E6%9E%84%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/binding%E6%A8%A1%E5%9D%97%E7%B1%BB%E7%BB%93%E6%9E%84%E5%9B%BE.png)
 
 此模块的主要思路为：`MyBatis`初始化时，会为接口（以下统称为`mapper`接口）创建代理类，当用户调用接口中的方法时，最终会执行代理类中的方法从而实现增删改查。
 

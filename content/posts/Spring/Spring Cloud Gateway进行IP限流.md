@@ -23,13 +23,13 @@ categories:
 
 滑动窗口算法中的滑动窗口就是单位时间，原理为把一个单位时间平均分成若干个格子，窗口每次滑动一个格，并把前面的格丢弃掉，每次只需要计算当前窗口内的所有格子请求总数就可以了，如下图所示
 
-![image-20200924165120726](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/PicGo/image-20200924165120726.png)
+![image-20200924165120726](/images/oss/PicGo/image-20200924165120726.png)
 
 ##### 3、漏桶算法
 
 漏桶算法比较简单，可以结合下图理解，水（请求）进入漏桶中，漏桶以匀速流出水（服务器处理请求），如果漏桶满了，这时候新流入的水（新接收到的请求）则会被丢弃掉
 
-![image-20200924165538535](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/PicGo/image-20200924165538535.png)
+![image-20200924165538535](/images/oss/PicGo/image-20200924165538535.png)
 
 ##### 4、令牌桶算法
 

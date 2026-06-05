@@ -317,7 +317,7 @@ categories:
 此方法的逻辑就是将方法和返回值加入到对应的集合之中，需要注意的是，`MyBatis`是将`method`对象封装成了`Invoker`对象。一起来看`Invoker`接口，`Invoker`接口有三个实现类，分别是：`GetFieldInvoker`提供属性`getter()`方法的封装、`MethodInvoker`提供`Method`对象的封装以及`SetFieldInvoker`提供属性`setter()`方法的封装，这三个类实现的比较简单，这里就不在深入分析了，对应类图如下
 
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/Invoker%E7%B1%BB%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/Invoker%E7%B1%BB%E5%9B%BE.png)
 
 
 

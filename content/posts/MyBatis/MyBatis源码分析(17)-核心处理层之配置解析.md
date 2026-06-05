@@ -52,7 +52,7 @@ public SqlSessionFactory build(Configuration config) {
 
 `XMLConfigBuilder`继承自`BaseBuilder`,`BaseBuilder`的子类如下
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/XMLMapperBuilder.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/XMLMapperBuilder.png)
 
 
 

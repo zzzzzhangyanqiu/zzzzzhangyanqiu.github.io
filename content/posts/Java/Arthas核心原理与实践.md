@@ -42,7 +42,7 @@ categories:
 
 ​	`Arthas`的大致原理：启动后，会分别启动服务端和客户端，客户端使用`telnet`连接到服务端，服务端负责接收客户端的命令动态修改被监测类的字节码，并将响应结果发送到客户端。
 
-![Arthas 整体逻辑-正式](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/Arthas%20%E6%95%B4%E4%BD%93%E9%80%BB%E8%BE%91-%E6%AD%A3%E5%BC%8F.png)
+![Arthas 整体逻辑-正式](/images/oss/picGo/Arthas%20%E6%95%B4%E4%BD%93%E9%80%BB%E8%BE%91-%E6%AD%A3%E5%BC%8F.png)
 
 `Arthas`的工作过程一共分为7个步骤
 
@@ -124,7 +124,7 @@ public static void agentmain(String agentArgs, Instrumentation inst) {
 
 首先根据启动命令`java -jar arthas-boot.jar`得知程序的入口是`arthas-boot.jar`，查看此`jar`包的`pom`文件可以看到启动类是`com.taobao.arthas.boot.Bootstrap`
 
-![image (1)](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/image%20(1).png)
+![image (1)](/images/oss/picGo/image%20(1).png)
 
 在`com.taobao.arthas.boot.Bootstrap.main()`方法中，主要做以下几步
 
@@ -362,7 +362,7 @@ public class Arthas {
 
 `arthas-agent`的`pom`文件指定了该`jar`的`premain-class`
 
-![image-20211220175636850](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/image-20211220175636850.png)
+![image-20211220175636850](/images/oss/picGo/image-20211220175636850.png)
 
 所以就可以直接看`com.taobao.arthas.agent334.AgentBootstrap.premain()`了，这里使用了`jdk 1.5`的方式直接指定的`agent`，所以是`premain`方法。如果是`1.6`的`attach`方式，那就是`agentmain`方法。
 
@@ -588,7 +588,7 @@ public void readline() {
 
 到此为止，服务器启动就分析完了，接下来用一张图总结
 
-![image-20211220175719701](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/image-20211220175719701.png)
+![image-20211220175719701](/images/oss/picGo/image-20211220175719701.png)
 
 ### 增强
 
@@ -870,13 +870,13 @@ public static class SpyInterceptor1 {
 
 用一张图来总结这部分的流程。
 
-![增强-正式](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/%E5%A2%9E%E5%BC%BA-%E6%AD%A3%E5%BC%8F.png)
+![增强-正式](/images/oss/picGo/%E5%A2%9E%E5%BC%BA-%E6%AD%A3%E5%BC%8F.png)
 
 #### watch
 
 `watch`命令可以监测方法调用时的入参、返回值等
 
-![image-20211220175809701](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/image-20211220175809701.png)
+![image-20211220175809701](/images/oss/picGo/image-20211220175809701.png)
 
 主要代码逻辑在`WatchAdviceListener`中
 
@@ -958,7 +958,7 @@ class WatchAdviceListener extends AdviceListenerAdapter {
 
 `trace`命令可以打印出方法执行的整体调用链路
 
-![image-20211220175833420](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/image-20211220175833420.png)
+![image-20211220175833420](/images/oss/picGo/image-20211220175833420.png)
 
 `TraceAdviceListener`没有实现`before()`方法，由父类`AbstractTraceAdviceListener`提供实现
 
@@ -1034,7 +1034,7 @@ public void begin() {
 
 `arthas-client.jar`中的`pom`文件指定了`main-class`为`TeletConsole`
 
-![image-20211220175857206](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/image-20211220175857206.png)
+![image-20211220175857206](/images/oss/picGo/image-20211220175857206.png)
 
 `TeletConsole.main()`中使用`ConsoleReader`和`TelnetClient`分别处理本地和远程的输入和输出
 
@@ -1101,7 +1101,7 @@ public class SpringUtils implements ApplicationContextAware {
 
 通过`ognl`直接获取
 
-![image-20211220175912235](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/image-20211220175912235.png)
+![image-20211220175912235](/images/oss/picGo/image-20211220175912235.png)
 
 可以看到，容器中的内容还是挺多的，比如`environment`、`beanFactory`等。
 
@@ -1129,7 +1129,7 @@ public class SpringExtensionFactory implements ExtensionFactory {
 
 发起一次请求后，响应结果如下，就可以很方便的找到请求入口了
 
-![image-20211220175934027](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/image-20211220175934027.png)
+![image-20211220175934027](/images/oss/picGo/image-20211220175934027.png)
 
 下一步就是使用`tt`命令监测这个方法，然后再重新发起一次请求
 
@@ -1137,7 +1137,7 @@ public class SpringExtensionFactory implements ExtensionFactory {
 [arthas@60712]$ tt -t org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter handleInternal
 ```
 
-![image-20211220175944172](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/image-20211220175944172.png)
+![image-20211220175944172](/images/oss/picGo/image-20211220175944172.png)
 
 监测到这个方法后，就可以调用`RequestMappingHandlerAdapter.getApplicationContext()`方法获取`applicationContext`对象
 
@@ -1153,7 +1153,7 @@ public class SpringExtensionFactory implements ExtensionFactory {
 [arthas@61462]$ ognl '#context=@com.mryx.qms.util.SpringUtils@context, #context.getEnvironment().getProperty("server.port")'
 ```
 
-![image-20211220175954723](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/image-20211220175954723.png)
+![image-20211220175954723](/images/oss/picGo/image-20211220175954723.png)
 
 比如执行某个`service`的方法
 
@@ -1161,7 +1161,7 @@ public class SpringExtensionFactory implements ExtensionFactory {
 [arthas@61462]$ ognl '#context=@com.mryx.qms.util.SpringUtils@context, #context.getBean("sysUserService").deleteUser(1)'
 ```
 
-![image-20211220180006097](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/image-20211220180006097.png)
+![image-20211220180006097](/images/oss/picGo/image-20211220180006097.png)
 
 比如。。。。
 
@@ -1169,7 +1169,7 @@ public class SpringExtensionFactory implements ExtensionFactory {
 
 首先描述下背景，公司的项目，使用`SpringBoot-1.5.13.RELEASE` 版本，该项目启动异常缓慢，达到了`251`秒
 
-![image-20211220180016176](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/image-20211220180016176.png)
+![image-20211220180016176](/images/oss/picGo/image-20211220180016176.png)
 
 对于`Arthas`来说，排查这种启动慢的问题是比较麻烦的，因为`Arthas`只有在应用启动后才能连上去，但是启动之后又不能排查启动慢的问题。有一种套圈的感觉，所以这里用了个“聪明”方法，在程序的`main`函数中加入`sleep`
 
@@ -1285,7 +1285,7 @@ No class or method is affected, try:
 
 原因是因为程序还在`sleep`中，`Spring`的类还没被加载，所以需要手动加载，下面是`trace`结果
 
-![image-20211220180030819](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/image-20211220180030819.png)
+![image-20211220180030819](/images/oss/picGo/image-20211220180030819.png)
 
 问题主要出在图中标记的两个方法中，分别占用了26秒和219秒，这两个加起来就260秒了。接下来开始分析，先`trace`第一个方法（重启应用并重复上述步骤）
 
@@ -1293,13 +1293,13 @@ No class or method is affected, try:
 [arthas@61462]$ trace org.springframework.boot.SpringApplication prepareContext '#cost>20000'
 ```
 
-![image-20211220180043210](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/image-20211220180043210.png)
+![image-20211220180043210](/images/oss/picGo/image-20211220180043210.png)
 
 继续`trace` * n，最后定位到一个小范围，然后就可以通过`review`代码或者`debug`的方式进行排查了，最终定位到该方法运行缓慢的问题：由于项目中缺少一个配置，所以默认访问了`localhost`，又一直得不到响应，所以会一直卡住。
 
 第二个方法的排查过程也类似，这里不再具体说明。最终，优化后的项目启动速度为`22`秒，降低了`90%`
 
-![image-20211220180203007](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picGo/image-20211220180203007.png)
+![image-20211220180203007](/images/oss/picGo/image-20211220180203007.png)
 
 ### 实践三：线上RPC接口调用错误分析
 

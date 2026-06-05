@@ -388,7 +388,7 @@ public void load(final Object userObject) throws SQLException {
 
 分别以`cglib`和`javassist`方法创建代理类，类图如下
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/MyBatis/proxyfactory%E7%B1%BB%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/MyBatis/proxyfactory%E7%B1%BB%E5%9B%BE.png)
 
 由于两个类实现逻辑类似，这里只分析`CglibProxyFactory`
 

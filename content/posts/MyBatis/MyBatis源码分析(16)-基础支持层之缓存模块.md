@@ -13,7 +13,7 @@ categories:
 
 `MyBatis`的`cache`模块位于`org.apache.ibatis.cache`下，首先看一下此包的结构
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/org.apache.ibatis.cache%E5%8C%85.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/org.apache.ibatis.cache%E5%8C%85.png)
 
 首先来看一下`cache`接口
 
@@ -69,7 +69,7 @@ public interface Cache {
 
 `Cache`接口有很多实现类，但除了`PerpetualCache`，其它都是装饰器
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/cache%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0%E7%B1%BB.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/cache%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0%E7%B1%BB.png)
 
 ### PerpetualCache
 

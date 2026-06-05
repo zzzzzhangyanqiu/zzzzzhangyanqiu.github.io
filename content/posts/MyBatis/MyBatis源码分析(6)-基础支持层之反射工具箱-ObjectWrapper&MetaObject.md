@@ -68,7 +68,7 @@ public interface ObjectWrapper {
 
 继续回到`ObjectWrapper`中，该接口有两个实现类，其中一个实现类中还包含两个子类，整体类关系图如下
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/ObjectWrapper%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/ObjectWrapper%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE.png)
 
 由于整体逻辑类似，这里只记录`BaseWrapper`和`BeanWrapper`两个类。了解了这两个类之后，再去看其它两个类也是游刃有余了。
 

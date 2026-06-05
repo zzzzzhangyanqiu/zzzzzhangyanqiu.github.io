@@ -13,7 +13,7 @@ categories:
 
 常见的数据源组件都实现了`javax.sql.DataSource`接口，`MyBatis`中提供了两个该接口的实现类，分别是`PooledDataSource`，`UnpooledDataSource`，首先来看一下整体架构图
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/%E6%95%B0%E6%8D%AE%E6%BA%90%E6%A8%A1%E5%9D%97%E7%B1%BB%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/%E6%95%B0%E6%8D%AE%E6%BA%90%E6%A8%A1%E5%9D%97%E7%B1%BB%E5%9B%BE.png)
 
 首先来看一下`DataSourceFactory`
 
@@ -253,7 +253,7 @@ public PooledDataSourceFactory() {
 
 `PooledDataSource`实现了简易版连接池的功能，整体结构如下
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/pooleddatasourse%E7%B1%BB%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/pooleddatasourse%E7%B1%BB%E5%9B%BE.png)
 
 `PooledDataSource`连接数据库的功能还是依赖于`UnpooledDataSource`。`PooledDataSource`作为连接池，并不会直接管理`java.sql.Connection`，而是管理`org.apache.ibatis.datasource.pooled.PooledConnection`连接对象。
 
@@ -421,7 +421,7 @@ public Connection getConnection() throws SQLException {
 
 `popConnection()`方法是`PooledDataSource`类的核心方法之一，用来从连接池中获取`PooledConnection`连接对象，主要思路如下
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/popConnection.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/popConnection.png)
 
 方法具体实现如下（以下代码省略`try-catch`和日志记录）
 
@@ -521,7 +521,7 @@ private PooledConnection popConnection(String username, String password) throws 
 
 `pushConnection()`方法也是`PooledDataSource`类的核心方法之一，方法逻辑如下
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/pushConnection.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/pushConnection.png)
 
 
 

@@ -35,7 +35,7 @@ T getResult(CallableStatement cs, int columnIndex) throws SQLException;
 
 为了方便用户自己实现此接口，`MyBatis`中提供了默认的实现类`BaseTypeHandler`，此类是一个抽象类，类关系图如下：
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/BaseTypeHandler%E7%B1%BB%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/BaseTypeHandler%E7%B1%BB%E5%9B%BE.png)
 
 
 
@@ -85,11 +85,11 @@ public T getResult(ResultSet rs, String columnName) throws SQLException {
 
 `BaseTypeHandler`类的子类比较多，如下
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/BaseTypeHandler%E5%AD%90%E7%B1%BB1.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/BaseTypeHandler%E5%AD%90%E7%B1%BB1.png)
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/BaseTypeHandler%E5%AD%90%E7%B1%BB2.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/BaseTypeHandler%E5%AD%90%E7%B1%BB2.png)
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/BaseTypeHandler%E5%AD%90%E7%B1%BB3.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/BaseTypeHandler%E5%AD%90%E7%B1%BB3.png)
 
 可能有的同学看到这么多子类有点慌，不要着急，这么多类，其实实现代码逻辑都是相同的，基本都是调用`PreparedStatement.get()/PreparedStatement.set()`两个方法来赋值和获取结果集。这里我们只看一下`IntegerTypeHandler`
 
@@ -137,7 +137,7 @@ private static final Map<JdbcType, TypeHandler<?>> NULL_TYPE_HANDLER_MAP = new H
 
 `TypeHandlerRegistry.register()`方法实现了注册`TypeHandler`对象的功能，该方法会向上述的几个集合中添加`TypeHandler`对象，该方法有多个重载，调用关系如下图所示（此图来自<<MyBatis技术内幕>>），下面来分析①～⑥这六个`register()`方法，其余的`register()`方法重载主要完成强制类型转换或初始化`TypeHandler `的功能，然后调用重载①～⑥实现注册功能，故不再做详细分析。
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TypeHandlerRegistry%E6%B3%A8%E5%86%8C%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/TypeHandlerRegistry%E6%B3%A8%E5%86%8C%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD.png)
 
 从图中可以看出，所有的方法最后都会调用重载4完成注册功能。首先我们来介绍此方法，这个方法有三个参数，分别是`Type（Java类型）, JdbcType（Jdbc中的类型）, TypeHandler<?> （TypeHandler对象）`，下面一起看一下方法的实现
 
@@ -266,7 +266,7 @@ public TypeHandlerRegistry() {
 
 介绍完了`TypeHandlerRegistry`的注册功能后，下面一起来看看如何查找对应的`TypeHandler`对象。`TypeHandlerRegistry.getTypeHandler()`方法提供了查找的功能，该方法也有多个重载，如下（此图来自<<MyBatis技术内幕>>）
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TypeHandlerRegistry%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/TypeHandlerRegistry%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD.png)
 
 
 

@@ -13,7 +13,7 @@ categories:
 
 首先来看此接口的`UML`类图
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/MyBatis/StatementHandler%E7%B1%BB%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/MyBatis/StatementHandler%E7%B1%BB%E5%9B%BE.png)
 
 可以看到`StatementHandler`接口由一个抽象类和`RoutingStatementHandler`实现，这里`MyBatis`用到了策略模式，如果你对此模式还不是很熟悉，建议看看[这篇文章](https://suiyueranzly.gitee.io/posts/3932426784/)或者去网上找一些相关的资料，下面是该接口定义的方法
 

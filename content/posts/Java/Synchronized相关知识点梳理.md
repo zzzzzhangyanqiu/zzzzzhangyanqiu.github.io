@@ -25,7 +25,7 @@ categories:
 
 `Mark Word`状态变化如图所示（这里需要了解每种锁状态下，`Mark Word`的值是不一样的）
 
-![image-20201207165501711](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picgo/image-20201207165501711.png)
+![image-20201207165501711](/images/oss/picgo/image-20201207165501711.png)
 
 #### 偏向锁
 
@@ -35,13 +35,13 @@ categories:
 
 首先是对无锁对象的加锁流程
 
-<img src="https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picgo/image-20201207160938995.png" alt="image-20201207160938995" style="zoom:80%;" />
+<img src="/images/oss/picgo/image-20201207160938995.png" alt="image-20201207160938995" style="zoom:80%;" />
 
 ##### 解锁流程
 
 对于偏向锁的释放流程
 
-![image-20201207172128924](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picgo/image-20201207172128924.png)
+![image-20201207172128924](/images/oss/picgo/image-20201207172128924.png)
 
 需要注意的是，就算是退出了同步代码块，**<font color=red>锁对象仍然保留了偏向锁的状态</font>**，这样做的好处是下次如果还是这个线程获取同一个锁对象，只需要检查这把锁是不是偏向自己就可以了，整个加锁指令不涉及到任何一个`CAS`指令
 
@@ -69,19 +69,19 @@ categories:
 
 首先先来介绍锁对象从无锁状态到轻量级锁的加锁流程
 
-<img src="https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picgo/image-20201207174011105.png" alt="image-20201207174011105" style="zoom:80%;" />
+<img src="/images/oss/picgo/image-20201207174011105.png" alt="image-20201207174011105" style="zoom:80%;" />
 
 除了无锁状态下的加锁，很多情况下，当前锁对象已经是偏向锁偏向另外一个线程了，这个时候就需要触发锁升级的逻辑
 
 ###### 从偏向锁锁升级
 
-![偏向锁加锁流程](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picgo/%E5%81%8F%E5%90%91%E9%94%81%E5%8A%A0%E9%94%81%E6%B5%81%E7%A8%8B.png)
+![偏向锁加锁流程](/images/oss/picgo/%E5%81%8F%E5%90%91%E9%94%81%E5%8A%A0%E9%94%81%E6%B5%81%E7%A8%8B.png)
 
 接下来了解一下轻量级锁的解锁流程
 
 ##### 解锁流程
 
-![image-20201207174707184](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picgo/image-20201207174707184.png)
+![image-20201207174707184](/images/oss/picgo/image-20201207174707184.png)
 
 ##### 优点
 
@@ -111,19 +111,19 @@ categories:
 
 ###### 从轻量级锁升级
 
-![image-20210106105404291](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picgo/image-20210106105404291.png)
+![image-20210106105404291](/images/oss/picgo/image-20210106105404291.png)
 
 如果锁对象本来就是重量级锁，这个时候就要依靠管程对象来提供互斥操作了
 
 ###### 从重量级锁加锁
 
-![image-20201208154025743](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picgo/image-20201208154025743.png)
+![image-20201208154025743](/images/oss/picgo/image-20201208154025743.png)
 
 ##### 解锁流程
 
 重量级锁释放的流程比较简单，主要操作管程对象
 
-![image-20201208154311077](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picgo/image-20201208154311077.png)
+![image-20201208154311077](/images/oss/picgo/image-20201208154311077.png)
 
 从这里也可以看出，`Synchronized`是<font color=red>非公平锁</font>，因为在释放锁之后到唤醒竞争队列的一个线程之前，其它的线程还是可以加入到竞争队列中的
 

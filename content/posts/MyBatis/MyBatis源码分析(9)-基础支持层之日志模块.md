@@ -20,7 +20,7 @@ categories:
 
 `MyBatis`日志模块位于`org.apache.ibatis.logging`包中，通过`Log`接口提供了日志的功能，再由各个适配器统一实现接口。`LogFactory`负责创建`Log`对象，类关系图如下。
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/Log%E7%B1%BB%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/Log%E7%B1%BB%E5%9B%BE.png)
 
 
 
@@ -28,7 +28,7 @@ categories:
 
 首先来看一下`Log`接口的子类和代码
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/log%E5%AD%90%E7%B1%BB.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/log%E5%AD%90%E7%B1%BB.png)
 
 ```java
 public interface Log {

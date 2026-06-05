@@ -11,7 +11,7 @@ date: 2019-05-04
 
 `Executor`是`MyBatis`中比较核心的模块之一，该模块负责调用之前分析过的`StatementHandler`来完成一系列对数据库的操作。首先看一下此模块中一些核心类的类图
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/MyBatis/Executor%E7%B1%BB%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/MyBatis/Executor%E7%B1%BB%E5%9B%BE.png)
 
 在整个模块的结构中，`MyBatis`用到了模板模式和装饰模式，对于这两种设计模式还不熟悉的同学，可以先看一下[这篇文章](https://suiyueranzly.gitee.io/posts/2130093882/)或者去网上找一些其他的资料。`MyBatis`的大致设计思路是，在`CachingExecutor`中使用装饰模式来为其他的`Executor`提供缓存功能，在`BaseExecutor`中使用模板模式来为其三个子类提供一些公共的方法。`CachingExecutor`及二级缓存后面会进行详细分析。了解了大概结构后，首先先来分析`Executor`接口，该接口主要方法如下
 

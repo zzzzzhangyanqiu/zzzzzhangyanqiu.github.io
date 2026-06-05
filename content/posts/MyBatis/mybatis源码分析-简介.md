@@ -19,11 +19,11 @@ categories:
 
 学习源码，首先要对`MyBatis`有一个结构上的认识，`MyBatis`整体架构分为三层，分别是基础层、核心层和接口层。各个层次的模块如下
 
-![](http://suiyueranzly.oss-cn-beijing.aliyuncs.com/MyBatis%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
+![](/images/oss/MyBatis%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
 
 其中每个模块的主要功能如下图
 
-![MyBatis](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/picgo/MyBatis.png)
+![MyBatis](/images/oss/picgo/MyBatis.png)
 
 在后面的文章中，我们来从下至上的依次了解每个模块的作用及其原理，一点点的揭开`MyBatis`的神秘面纱
 

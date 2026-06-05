@@ -21,7 +21,7 @@ default String getTypeName() {
 
 此接口有四个子接口和一个实现类，除了`Class`外，基本上四个类型都是为泛型来服务的，如下图
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/Type%E7%B1%BB%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/Type%E7%B1%BB%E5%9B%BE.png)
 
 ### Class ###
 

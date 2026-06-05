@@ -70,7 +70,7 @@ BoundSql getBoundSql(Object parameterObject);
 
 该接口有四个实现类，分别为
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/MyBatis/sqlsourceUML%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/MyBatis/sqlsourceUML%E5%9B%BE.png)
 
 其中，`RawSqlSource`负责处理静态`SQL`语句，`DynamicSqlSource`负责处理动态`SQL`语句。两者都会将处理后的`SQL`语句封装成`StaticSqlSource`对象。
 
@@ -166,7 +166,7 @@ boolean apply(DynamicContext context);
 
 `SqlNode`接口有以下实现类
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/MyBatis/sqlnodeUML%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/MyBatis/sqlnodeUML%E5%9B%BE.png)
 
 由于动态`SQL`语言存在嵌套情况（如`if`标签下嵌套`foreach`标签），为了方便处理，`MyBatis`此处使用了**组合模式**，如果你对此模式还不是很熟悉，建议看一看[这篇文章](https://suiyueranzly.gitee.io/posts/1191195587/)或者去网上看一些相关资料。
 

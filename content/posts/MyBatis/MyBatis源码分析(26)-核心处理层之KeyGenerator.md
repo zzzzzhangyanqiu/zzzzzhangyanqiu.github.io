@@ -29,7 +29,7 @@ void processAfter(Executor executor, MappedStatement ms, Statement stmt, Object 
 
 `MyBatis`为其提供了三个实现类，`UML`图如下
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/MyBatis/KeyGenerator%E7%B1%BB%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/MyBatis/KeyGenerator%E7%B1%BB%E5%9B%BE.png)
 
 由于`NoKeyGenerator`方法是空实现，故不分析，主要来看`Jdbc3KeyGenerator`和`SelectKeyGenerator`
 

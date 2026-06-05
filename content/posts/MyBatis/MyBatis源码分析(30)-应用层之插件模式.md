@@ -54,7 +54,7 @@ public class Interceptor implements org.apache.ibatis.plugin.Interceptor {
 
 然后在`mybatis-config.xml`中配置
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/MyBatis/interceptor%E9%85%8D%E7%BD%AE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/MyBatis/interceptor%E9%85%8D%E7%BD%AE.png)
 
 这样就可以进行自定义拦截逻辑了
 

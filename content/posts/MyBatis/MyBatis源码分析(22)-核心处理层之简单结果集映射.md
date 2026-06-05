@@ -360,7 +360,7 @@ public void nextResultObject(T resultObject) {
 
 `ResultHandler`接口只有一个方法`handleResult(ResultContext<? extends T> resultContext)`，处理结果集。相信看到这里大家应该会了解一些，`MyBatis`在映射成功后，会调用`DefaultResultContext.nextResultObject()`方法暂存结果集，随后将该对象作为参数调用`ResultHandler.handleResult()`处理结果集。`ResultHandler`接口有三个实现类，如下
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/MyBatis/resultHandler%E7%B1%BB%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/MyBatis/resultHandler%E7%B1%BB%E5%9B%BE.png)
 
 经过上面的代码分析，这里用到的是`DefaultResultHandler`，我们这里先分析这一个实现类，该类实现比较简单，如下
 

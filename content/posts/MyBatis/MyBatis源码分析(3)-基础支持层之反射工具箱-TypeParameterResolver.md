@@ -17,7 +17,7 @@ categories:
 
 ​	`Reflector`类中用到`TypeParameterResolver`的主要有四处，分别是`addGetMethod()`中调用 `TypeParameterResolver.resolveReturnType()` 用来解析方法返回值类型、`addSetMethod()`方法中调用`TypeParameterResolver.resolveParamTypes()` 用来解析方法参数类型、`addSetField()` 和 `addGetField()` 方法调用了`TypeParameterResolver.resolveFieldType()`用来解析字段类型。这里可能有些乱，我们通过下面的一幅图全面的来了解`TypeParameterResolver`中各方法的调用关系。
 
-​	![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/TypeParameterResolver%E5%90%84%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E5%85%B3%E7%B3%BB.png)
+​	![](/images/oss/%E5%8D%9A%E5%AE%A2/TypeParameterResolver%E5%90%84%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E5%85%B3%E7%B3%BB.png)
 
 
 

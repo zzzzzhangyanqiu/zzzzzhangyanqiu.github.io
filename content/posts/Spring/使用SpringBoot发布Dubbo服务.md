@@ -371,6 +371,6 @@ categories:
 [4]: http://zookeeper.apache.org/
 [5]: https://maven.apache.org/
 [6]: https://projects.spring.io/spring-boot/
-[7]: http://suiyueranzly.oss-cn-beijing.aliyuncs.com/18-7-13/62405057.jpg
-[8]: http://suiyueranzly.oss-cn-beijing.aliyuncs.com/18-7-13/78733576.jpg
-[9]: http://suiyueranzly.oss-cn-beijing.aliyuncs.com/18-7-13/39356878.jpg
+[7]: /images/oss/18-7-13/62405057.jpg
+[8]: /images/oss/18-7-13/78733576.jpg
+[9]: /images/oss/18-7-13/39356878.jpg

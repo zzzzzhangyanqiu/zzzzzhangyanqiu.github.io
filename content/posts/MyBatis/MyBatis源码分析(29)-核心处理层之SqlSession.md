@@ -11,7 +11,7 @@ categories:
 
 说起`SqlSession`，大家肯定都不陌生，在编写官网`demo`时候就是使用的`SqlSession`完成数据库的操作，对于`MyBatis`来说，`SqlSession`也是对外供应用程序调用的唯一接口。首先看一下此模块的类图
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/MyBatis/sqlsession%E7%B1%BB%E5%9B%BE.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/MyBatis/sqlsession%E7%B1%BB%E5%9B%BE.png)
 
 整个模块的实际比较简单，`SqlSessionFactory/DefaultSqlSessionFactory`负责创建`SqlSession`，`SqlSession/DefaultSqlSession`负责调用`Executor`执行数据库操作。唯一比较特殊的是`SqlSessionManager`类，类图中可以看出，它继承了两个接口，所以，它既可以创建`SqlSession`，也可以调用`Executor`，并且可以根据线程复用`SqlSession`，后面会进行详细分析
 

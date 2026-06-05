@@ -12,7 +12,7 @@ categories:
 在实践开发中， 控制数据库事务是一件非常重要的工作， `MyBatis`使用`Transaction` 接口对
 数据库事务进行了抽象，`MyBatis`的事务模块使用了工厂模式，首先来看一下整体结构
 
-![](https://suiyueranzly.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/%E4%BA%8B%E5%8A%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png)
+![](/images/oss/%E5%8D%9A%E5%AE%A2/%E4%BA%8B%E5%8A%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png)
 
 其中，`Transaction`就是工厂模式中的产品接口，`TransactionFactory`是抽象工厂角色。
 
