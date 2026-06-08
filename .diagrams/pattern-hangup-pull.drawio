@@ -1,0 +1,80 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="hangup-pull" name="挂起的pull">
+    <mxGraphModel dx="900" dy="600" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="480" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="挂起的 pull ｜ 用一次 pull 的「壳」，换 push 的「实时」" style="text;html=1;align=left;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="30" y="20" width="820" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- ============ 卡片1 Kafka ============ -->
+        <mxCell id="c1" value="Kafka" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;verticalAlign=top;fontStyle=1;fontSize=15;arcSize=4;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="30" y="80" width="260" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="c1up" value="broker" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#97D077;strokeColor=#000000;fontColor=#000000;fontStyle=1;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="155" y="135" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c1dn" value="consumer" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#FFD45E;strokeColor=#000000;fontColor=#000000;fontStyle=1;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="65" y="310" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c1pull" value="① poll() 拉取，挂住" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;html=1;strokeColor=#1864AB;strokeWidth=2.5;fontColor=#1864AB;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.4;exitY=0;exitDx=0;exitDy=0;entryX=0.3;entryY=1;entryDx=0;entryDy=0" edge="1" parent="1" source="c1dn" target="c1up">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" x="-2" y="-20" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c1push" value="② 攒够 / 超时，回 records" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;html=1;strokeColor=#C92A2A;strokeWidth=2.5;fontColor=#C92A2A;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.6;entryY=0;entryDx=0;entryDy=0" edge="1" parent="1" source="c1up" target="c1dn">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" x="2" y="20" /></mxGeometry>
+        </mxCell>
+
+        <!-- ============ 卡片2 Kubernetes ============ -->
+        <mxCell id="c2" value="Kubernetes list-watch" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;verticalAlign=top;fontStyle=1;fontSize=15;arcSize=4;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="320" y="80" width="260" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="c2up" value="API server" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#97D077;strokeColor=#000000;fontColor=#000000;fontStyle=1;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="445" y="135" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c2dn" value="controller" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#FFD45E;strokeColor=#000000;fontColor=#000000;fontStyle=1;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="355" y="310" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c2pull" value="① list 后挂 watch" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;html=1;strokeColor=#1864AB;strokeWidth=2.5;fontColor=#1864AB;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.4;exitY=0;exitDx=0;exitDy=0;entryX=0.3;entryY=1;entryDx=0;entryDy=0" edge="1" parent="1" source="c2dn" target="c2up">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" x="-2" y="-20" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c2push" value="② etcd 变更即推下" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;html=1;strokeColor=#C92A2A;strokeWidth=2.5;fontColor=#C92A2A;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.6;entryY=0;entryDx=0;entryDy=0" edge="1" parent="1" source="c2up" target="c2dn">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" x="2" y="20" /></mxGeometry>
+        </mxCell>
+
+        <!-- ============ 卡片3 SSE / gRPC ============ -->
+        <mxCell id="c3" value="SSE / gRPC server streaming" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;verticalAlign=top;fontStyle=1;fontSize=15;arcSize=4;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="610" y="80" width="260" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="c3up" value="server" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#97D077;strokeColor=#000000;fontColor=#000000;fontStyle=1;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="735" y="135" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c3dn" value="client" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#FFD45E;strokeColor=#000000;fontColor=#000000;fontStyle=1;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="645" y="310" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c3pull" value="① 一次请求（GET / 调用）" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;html=1;strokeColor=#1864AB;strokeWidth=2.5;fontColor=#1864AB;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.4;exitY=0;exitDx=0;exitDy=0;entryX=0.3;entryY=1;entryDx=0;entryDy=0" edge="1" parent="1" source="c3dn" target="c3up">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" x="-2" y="-20" /></mxGeometry>
+        </mxCell>
+        <mxCell id="c3push" value="② 服务端持续推事件" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;html=1;strokeColor=#C92A2A;strokeWidth=2.5;fontColor=#C92A2A;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.6;entryY=0;entryDx=0;entryDy=0" edge="1" parent="1" source="c3up" target="c3dn">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset" x="2" y="20" /></mxGeometry>
+        </mxCell>
+
+        <!-- ============ 图例 ============ -->
+        <mxCell id="lg-red" value="" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;html=1;strokeColor=#C92A2A;strokeWidth=2.5" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="320" y="438" as="sourcePoint" /><mxPoint x="360" y="438" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="lg-red-t" value="push：上游主动推（信号）" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontColor=#C92A2A;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="366" y="426" width="180" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="lg-blue" value="" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;html=1;strokeColor=#1864AB;strokeWidth=2.5" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="560" y="438" as="sourcePoint" /><mxPoint x="600" y="438" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="lg-blue-t" value="pull：下游发起拉取（传输）" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontColor=#1864AB;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="606" y="426" width="190" height="24" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
