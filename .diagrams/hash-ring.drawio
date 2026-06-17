@@ -1,0 +1,68 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="hashring" name="一致性哈希环">
+    <mxGraphModel dx="760" dy="640" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="740" pageHeight="640" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="一致性哈希：加一个节点 D，只动 A→D 这段弧" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="110" y="12" width="520" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- the ring -->
+        <mxCell id="ring" value="" style="ellipse;sketch=1;jiggle=2;curveFitting=1;fillColor=none;strokeColor=#9AA0A6;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="130" width="400" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="center" value="哈希环&#10;0 ~ 2³²&#10;（顺时针找&#10;第一个节点）" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#777777;" vertex="1" parent="1">
+          <mxGeometry x="375" y="288" width="130" height="84" as="geometry" />
+        </mxCell>
+
+        <!-- nodes on the ring -->
+        <mxCell id="nA" value="A&#10;100" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#9DC3F7;strokeColor=#000000;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="413" y="108" width="54" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="nB" value="B&#10;8000" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#9DC3F7;strokeColor=#000000;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="542" y="461" width="54" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="nC" value="C&#10;20000" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#9DC3F7;strokeColor=#000000;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="225" y="376" width="54" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="nD" value="D（新）&#10;5000" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#97D077;strokeColor=#000000;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="601" y="240" width="62" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- affected keys (between A and D) -->
+        <mxCell id="k1" value="" style="ellipse;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#FFB74D;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="524" y="150" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="k2" value="" style="ellipse;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#FFB74D;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="576" y="190" width="20" height="20" as="geometry" />
+        </mxCell>
+        <!-- unaffected key (between D and B) -->
+        <mxCell id="k3" value="" style="ellipse;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#D9D9D9;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="618" y="372" width="20" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- edges: affected keys now go to D (orange solid) -->
+        <mxCell id="ek1" value="改投 D" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;strokeColor=#E65100;strokeWidth=2.5;fontColor=#E65100;fontStyle=1;" edge="1" parent="1" source="k1" target="nD">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ek2" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;strokeColor=#E65100;strokeWidth=2.5;" edge="1" parent="1" source="k2" target="nD">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!--原本指向 B (灰虚线) -->
+        <mxCell id="ek2b" value="原本属 B" style="sketch=1;jiggle=2;curveFitting=1;endArrow=open;strokeColor=#999999;strokeWidth=1.5;dashed=1;fontColor=#999999;" edge="1" parent="1" source="k2" target="nB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- unaffected key still to B (gray solid) -->
+        <mxCell id="ek3" value="不受影响&#10;仍属 B" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;strokeColor=#666666;strokeWidth=2;fontColor=#666666;" edge="1" parent="1" source="k3" target="nB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="foot" value="新增节点 D 只截走 A→D 这段弧上的 key（约 1/N），环上其余区段一个都不用动。" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#555555;" vertex="1" parent="1">
+          <mxGeometry x="70" y="600" width="600" height="24" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

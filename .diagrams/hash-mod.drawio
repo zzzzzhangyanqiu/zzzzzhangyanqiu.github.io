@@ -1,0 +1,117 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="hashmod" name="取模扩容">
+    <mxGraphModel dx="900" dy="640" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="880" pageHeight="650" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="同一批 key，扩容前后落在哪台机器" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="190" y="14" width="500" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lbl_before" value="扩容前 N=4　hash % 4" style="text;html=1;align=left;verticalAlign=middle;fontSize=13;fontStyle=1;fontColor=#1A4E8A;" vertex="1" parent="1">
+          <mxGeometry x="90" y="72" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_after" value="扩容后 N=5　hash % 5" style="text;html=1;align=left;verticalAlign=middle;fontSize=13;fontStyle=1;fontColor=#1A4E8A;" vertex="1" parent="1">
+          <mxGeometry x="70" y="402" width="280" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- top buckets N=4 -->
+        <mxCell id="b4_0" value="N0" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#F2F2F2;strokeColor=#000000;fontColor=#000000;verticalAlign=top;spacingTop=4;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="110" width="110" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="b4_1" value="N1" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#F2F2F2;strokeColor=#000000;fontColor=#000000;verticalAlign=top;spacingTop=4;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="110" width="110" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="b4_2" value="N2" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#F2F2F2;strokeColor=#000000;fontColor=#000000;verticalAlign=top;spacingTop=4;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="110" width="110" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="b4_3" value="N3" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#F2F2F2;strokeColor=#000000;fontColor=#000000;verticalAlign=top;spacingTop=4;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="110" width="110" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- bottom buckets N=5 -->
+        <mxCell id="b5_0" value="N0" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#F2F2F2;strokeColor=#000000;fontColor=#000000;verticalAlign=top;spacingTop=4;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="440" width="95" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="b5_1" value="N1" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#F2F2F2;strokeColor=#000000;fontColor=#000000;verticalAlign=top;spacingTop=4;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="235" y="440" width="95" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="b5_2" value="N2" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#F2F2F2;strokeColor=#000000;fontColor=#000000;verticalAlign=top;spacingTop=4;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="440" width="95" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="b5_3" value="N3" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#F2F2F2;strokeColor=#000000;fontColor=#000000;verticalAlign=top;spacingTop=4;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="565" y="440" width="95" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="b5_4" value="N4" style="rounded=1;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#F2F2F2;strokeColor=#000000;fontColor=#000000;verticalAlign=top;spacingTop=4;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="730" y="440" width="95" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- top balls -->
+        <mxCell id="u64" value="64" style="ellipse;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#BBD9FB;strokeColor=#000000;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="123" y="160" width="44" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="u21" value="21" style="ellipse;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#C8E6C9;strokeColor=#000000;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="323" y="138" width="44" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="u33" value="33" style="ellipse;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#BBD9FB;strokeColor=#000000;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="323" y="192" width="44" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="u10" value="10" style="ellipse;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#BBD9FB;strokeColor=#000000;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="523" y="128" width="44" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="u46" value="46" style="ellipse;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#BBD9FB;strokeColor=#000000;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="523" y="176" width="44" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="u58" value="58" style="ellipse;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#BBD9FB;strokeColor=#000000;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="523" y="224" width="44" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- bottom balls -->
+        <mxCell id="d10" value="10" style="ellipse;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#BBD9FB;strokeColor=#000000;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="96" y="478" width="44" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="d21" value="21" style="ellipse;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#C8E6C9;strokeColor=#000000;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="462" width="44" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="d46" value="46" style="ellipse;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#BBD9FB;strokeColor=#000000;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="516" width="44" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="d33" value="33" style="ellipse;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#BBD9FB;strokeColor=#000000;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="462" width="44" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="d58" value="58" style="ellipse;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#BBD9FB;strokeColor=#000000;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="516" width="44" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="d64" value="64" style="ellipse;sketch=1;jiggle=2;curveFitting=1;fillStyle=solid;fillColor=#BBD9FB;strokeColor=#000000;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="756" y="478" width="44" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- edges: stay (green) -->
+        <mxCell id="e21" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;strokeColor=#2E7D32;strokeWidth=2.5;" edge="1" parent="1" source="u21" target="d21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- edges: moved (red dashed) -->
+        <mxCell id="e10" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;strokeColor=#D32F2F;strokeWidth=2;dashed=1;" edge="1" parent="1" source="u10" target="d10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e33" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;strokeColor=#D32F2F;strokeWidth=2;dashed=1;" edge="1" parent="1" source="u33" target="d33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e46" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;strokeColor=#D32F2F;strokeWidth=2;dashed=1;" edge="1" parent="1" source="u46" target="d46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e58" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;strokeColor=#D32F2F;strokeWidth=2;dashed=1;" edge="1" parent="1" source="u58" target="d58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e64" style="sketch=1;jiggle=2;curveFitting=1;endArrow=classic;strokeColor=#D32F2F;strokeWidth=2;dashed=1;" edge="1" parent="1" source="u64" target="d64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="foot" value="N → N+1：只有约 1/(N+1) 的 key 留在原地（绿色），其余几乎全部要搬家（红色虚线）" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#555555;" vertex="1" parent="1">
+          <mxGeometry x="90" y="606" width="700" height="24" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
