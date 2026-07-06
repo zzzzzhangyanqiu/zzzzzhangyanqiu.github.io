@@ -57,8 +57,17 @@ Known material cards and status:
   `.drafts/素材-ES的split和shrink为什么巧妙.md`.
 - `ES 查询性能优化实战`:
   `.drafts/素材-ES查询性能优化实战.md`.
-- `ES pinned query：原生搜索置顶`:
-  `.drafts/素材-ES-pinned-query置顶.md`.
+
+## Material-To-Post Workflow
+
+When promoting a `.drafts/` material card into a post:
+
+- Before drafting the full article, first recommend title options, the overall
+  article structure, and the intended highlight or hook of the piece.
+- After drafting the article, run the `humanize-writing` skill and revise the
+  draft to remove AI-like phrasing before treating it as done.
+- After the user says the article is OK to commit or publish, clean up the
+  corresponding material card from `.drafts/` as part of the same workflow.
 
 Some earlier cards have already been promoted to published posts and removed from
 `.drafts/`, including:
@@ -67,6 +76,8 @@ Some earlier cards have already been promoted to published posts and removed fro
   `content/posts/分布式/一份数据怎么被切碎又拼回来/`.
 - `实时性 / 海量 / 精准，三选二`:
   `content/posts/分布式/三个都想要只能要两个/`.
+- `ES pinned query：原生搜索置顶`:
+  `content/posts/分布式/置顶这件事放应用层还是放es/`.
 
 ## Draw.io Diagrams
 
@@ -122,4 +133,3 @@ Example export:
 ```bash
 /Applications/draw.io.app/Contents/MacOS/draw.io -x -f svg --embed-svg-fonts false --svg-theme light -o out.svg in.drawio --no-sandbox
 ```
-
